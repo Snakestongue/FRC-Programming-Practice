@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Create a Drive Constant",
+    "description": "Add a public static constant called MAX_DRIVE_SPEED with value 0.8. This will be in the Constants class",
+    "starterCode": "public class Constants {\n    // TODO: define your constants here\n}",
+    "solutionCode": "public class Constants {\n    public static final double MAX_DRIVE_SPEED = 0.9;\n}"
+  },
+  {
+    "id": 2,
+    "title": "Create a Command",
+    "description": "Write a simple Command called DriveForward that prints 'Driving forward!' when executed.",
+    "starterCode": "public class DriveForward extends CommandBase {\n    @Override\n    public void execute() {\n        // TODO: add code here\n    }\n}",
+    "solutionCode": "public class DriveForward extends CommandBase {\n    @Override\n    public void execute() {\n        System.out.println(\"Driving forward!\");\n    }\n}"
+  }
+]
