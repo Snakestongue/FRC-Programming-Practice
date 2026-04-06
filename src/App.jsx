@@ -1,46 +1,52 @@
-import { useState } from 'react';
+import {useState }from 'react';
 import Editor from '@monaco-editor/react';
 import problems from './problems.json';
-// import 'App.css'
-
-function App() {
-  const [selectedProblem, setSelectedProblem] = useState(problems[0]); // default first problem
-  const [userCode, setUserCode] = useState(selectedProblem.starterCode);
-  const [feedback, setFeedback] = useState('');
-  const handleSubmit=()=> {
-    if (userCode.trim()== selectedProblem.solutionCode.trim()){
+function App(){
+  const[selectedProblem, setSelectedProblem]=useState(problems[0]);
+  const[userCode, setUserCode]= useState(selectedProblem.starterCode);
+  const [feedback, setFeedback]= useState('');
+  const handleSubmit=()=>{
+    if(userCode.trim()== selectedProblem.solutionCode.trim()){
       setFeedback('Correct!');
-    } else {
+    }else{
       setFeedback('Try again.');
     }
   };
   const handleProblemChange=(e)=>{
-    const problem = problems.find(p => p.id==parseInt(e.target.value));
+    const problem =problems.find(p =>p.id==parseInt(e.target.value));
     setSelectedProblem(problem);
     setUserCode(problem.starterCode);
     setFeedback('');
   };
   return (
-    <div id="mainDiv">
+    <div id="mainDiv" >
       <header style={{
-        background: "rgb(60,60,60)",
+        background: "rgb(15,15,15)",
         margin:0,
         padding:"10px",
         width: "100%",      
         position:"fixed", 
         top:0,
         left:  0,
-        zIndex:1000,       
+        zIndex:1000,  
+        boxShadow:" 0px 2px 20px white",
+        display:"flex",
+        flexDirection:"row",
+        justifyContent:"space-around"
       }}>
         <h1>FRC Programming Practice</h1>
+        <select>
+          <option>M.C</option>
+          <option>Coding</option>
+        </select>
       </header>
       <div style={{marginTop: "135px"}}>
-      <select onChange={handleProblemChange} value={selectedProblem.id} 
-      style={{background:'black', color:"white", border:"1px solid white", borderRadius:"10px", fontSize:"20px", padding:"5px", marginBottom:"15px"}}>
-        {problems.map(p => (
+      <select onChange={handleProblemChange} value={selectedProblem.id} >
+        {problems.map(p=>(
           <option key={p.id} value={p.id}>{p.title}</option>
         ))}
       </select>
+      <p style={{color:"white",fontSize:"18px", marginBottom:"10px"}}> {selectedProblem.description} </p>
       <div style ={{height:'70vh'}}>
         <Editor
           height="100%"
