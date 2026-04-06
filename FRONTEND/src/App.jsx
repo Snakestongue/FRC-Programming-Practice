@@ -6,12 +6,36 @@ function App(){
   const[userCode, setUserCode]= useState(selectedProblem.starterCode);
   const [feedback, setFeedback]= useState('');
   const handleSubmit=()=>{
-    if(userCode.trim()== selectedProblem.solutionCode.trim()){
+    if(userCode.trim().toLowerCase()== selectedProblem.solutionCode.trim().toLowerCase()){
       setFeedback('Correct!');
-    }else{
-      setFeedback('Try again.');
+    }else if(selectedProblem.id==problems[0].id){
+      if ((userCode.match(/public/gi) || []).length < 2){
+        setFeedback("Did you add public?")
+      }else if (!userCode.trim().toLowerCase().includes("static")){
+        setFeedback("Did you add static?")
+      }else if (!userCode.trim().toLowerCase().includes("double")){
+          setFeedback("Did you add double?")
+      }else if (!userCode.trim().toLowerCase().includes("0.8")){
+          setFeedback("Did you add 0.8?")
+      }else{
+        setFeedback("Try again")
+      }
+    }else if(selectedProblem.id==problems[1].id){
+      if (!userCode.trim().toLowerCase().includes("private")){
+        setFeedback("Did you add private?")
+      }else if (!userCode.trim().toLowerCase().includes("final")){
+        setFeedback("Did you add final?")
+      }else if ((userCode.match(/talonfx/gi) || []).length < 2){
+          setFeedback("Did you add TalonFX twice?")
+      }else if (!userCode.trim().toLowerCase().includes("intakemotor")){
+          setFeedback("Did you name it intakeMotor")
+      }else if (!userCode.trim().toLowerCase().includes("(3)")){
+          setFeedback("Did you set the speed to (3)")
+      }else{
+        setFeedback("Try again")
+      }
     }
-  };
+  }
   const handleProblemChange=(e)=>{
     const problem =problems.find(p =>p.id==parseInt(e.target.value));
     setSelectedProblem(problem);
@@ -35,10 +59,10 @@ function App(){
         justifyContent:"space-around"
       }}>
         <h1>FRC Programming Practice</h1>
-        <select>
+        {/* <select>
           <option>M.C</option>
           <option>Coding</option>
-        </select>
+        </select> */}
       </header>
       <div style={{marginTop: "135px"}}>
       <select onChange={handleProblemChange} value={selectedProblem.id} >
