@@ -44,34 +44,21 @@ function App(){
   };
   return (
     <div id="mainDiv" >
-      <header style={{
-        background: "rgb(15,15,15)",
-        margin:0,
-        padding:"10px",
-        width: "100%",      
-        position:"fixed", 
-        top:0,
-        left:  0,
-        zIndex:1000,  
-        boxShadow:" 0px 2px 20px white",
-        display:"flex",
-        flexDirection:"row",
-        justifyContent:"space-around"
-      }}>
+      <header>
         <h1>FRC Programming Practice</h1>
         {/* <select>
           <option>M.C</option>
           <option>Coding</option>
         </select> */}
       </header>
-      <div style={{marginTop: "135px"}}>
+      <div style={{marginTop: "55px"}}>
       <select onChange={handleProblemChange} value={selectedProblem.id} >
         {problems.map(p=>(
           <option key={p.id} value={p.id}>{p.title}</option>
         ))}
       </select>
       <p style={{color:"white",fontSize:"18px", marginBottom:"10px"}}> {selectedProblem.description} </p>
-      <div style ={{height:'70vh'}}>
+      <div style ={{height:'50vh'}}>
         <Editor
           height="100%"
           defaultLanguage="java"
@@ -80,12 +67,17 @@ function App(){
           onChange={(value)=>setUserCode(value)}
         />
       </div>
-      </div>
+      
       <button id="submit" onClick={handleSubmit}
       style={{marginTop: '15px', background:"black", color:"white", padding:"5px", border:"1px solid white", borderRadius:"10px", width:"300px"
        }}>Submit</button>
       {feedback && <p style={{color:"white"}}>{feedback}</p>}
+      </div>
+      <footer>
+        <a href="PP.html">Privacy Policy</a>
+      </footer>
     </div>
+    
   );
 }
 export default App;

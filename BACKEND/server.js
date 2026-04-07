@@ -1,10 +1,31 @@
-const express = require("express");
+import cors from "cors"
+import express from "express";
+import path from "path"
+import { fileURLToPath } from "url"
+import { dirname} from "path"
+import router from "./routes.js"
+import dotenv from "dotenv"
+import connectDB from "./database.js"
+const __filename =fileURLToPath(import.meta.url)
+const __dirname =dirname(__filename)
 let app = express();
-const path = require("path");
+dotenv.config({path: '../.env' });
+
+app.use(cors());
+app.use(express.json());
 app.use(express.static("public"));
-app.get("/",(req, res)=>{
-    res.sendFile(path.join(__dirname, "../index.html"));
+app.use("/", router);
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../FRONTEND/index.html"));
 });
-app.listen(9000, ()=>{
-    console.log("running")
-})
+let startServer = async ()=>{
+    try {
+        await connectDB();
+        app.listen(9000, () => {
+            console.log("running yes yes");
+        });
+    } catch (error) {
+        console.log(error)
+    }
+}
+startServer()
