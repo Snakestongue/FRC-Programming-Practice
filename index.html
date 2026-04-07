@@ -16,10 +16,12 @@
         if (savedNumber){
           return;
         }
-        let number = Number(prompt("Enter you robotics team number!"))
-        if (!number){
-          alert("Please enter team number!")
-          return;
+        let number;
+        while (!number){
+          number = Number(prompt("Please enter your robotics team number!"));
+          if(!number){
+              alert("Please enter a team number!");
+          }
         }
         try {
           const response = await fetch("http://localhost:9000/alert",{
