@@ -75,6 +75,7 @@ function App(){
       </div>
       <footer>
         <a href="PP.html">Privacy Policy</a>
+        <p style={{color:"white"}}>© By Snakestongue. All right reserved.</p>
       </footer>
     </div>
     
