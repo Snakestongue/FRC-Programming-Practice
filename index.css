@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  font: 18px/145% system-ui, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: 0.18px;
+  color: #6b6375;
+  background: black;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  /* border-inline: 1px solid white; */
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500;
+  color: white;
+}
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+}
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+code,.counter {
+  font-family: ui-monospace, Consolas, monospace;
+  display: inline-flex;
+  border-radius: 4px;
+  color: #08060d;
+}
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background-color: #f4f3ec;
+}
+
+/*MY Styles, not premade*/
+#submit:hover{
+  cursor: pointer;
+  opacity:.5;
+}
+select{
+  background:black;
+  color:white;
+  border:1px solid white;
+  border-radius:10px; 
+  font-size:20px;
+  padding:5px;
+  margin-bottom:15px;
+}
+header{
+  height: 80px; /* adjust if your header is taller */
+  background: rgb(15,15,15);
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 2px 20px white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+footer{
+  background: rgb(15,15,15);
+  margin:0;
+  margin-top: 30px;
+  padding:10px;
+  width: 100%;     
+  position:fixed;
+  bottom:0;
+  left:  0;
+  z-index:1000;  
+  box-shadow:0px 2px 20px white;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+}
+
+#PP{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  width: 65%;
+  max-width: 600px;
+  min-height: 300px;     
+  background: rgb(20, 20, 20);
+  box-shadow: 0 4px 20px rgba(255,255,255,0.2);
+
+}
+body{
+  padding-top: 100px;
+}
+a:visited, a:active, a:link{
+  color:white;
+  transition: .5s;
+}
+a:hover{
+  opacity: .5;
+}
