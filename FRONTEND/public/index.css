@@ -39,9 +39,9 @@ h1 {
   margin: 32px 0;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1000px) {
   h1 {
-    font-size: 36px;
+    font-size: 20px;
     margin: 20px 0;
   }
 }
@@ -101,6 +101,21 @@ header{
   flex-direction: row;
   justify-content: space-around;
 }
+#headerList{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  
+  
+}
+#headerList li{
+  justify-content: space-around;
+  margin: 0px 30px;
+  color:white;
+}
+li:hover{
+  cursor: pointer;
+}
 footer{
   background: rgb(15,15,15);
   margin:0;
@@ -143,4 +158,33 @@ a:visited, a:active, a:link{
 }
 a:hover{
   opacity: .5;
+}
+.bQ{
+  color:white;
+  margin: 20px 30px;
+  padding: 0;
+  width:650px;
+  background-color: rgb(15,15,15);
+
+}
+#f3{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#choice{
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width:1000px){
+    #f3{
+      display: flex;
+      flex-direction: column;
+      /* margin: auto; */
+    }
+    header ul li{
+      font-size: 13px;
+    }
+    
 }

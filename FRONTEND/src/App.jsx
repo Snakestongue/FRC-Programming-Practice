@@ -1,3 +1,4 @@
+import {Link } from "react-router-dom"
 import {useState }from 'react';
 import Editor from '@monaco-editor/react';
 import problems from './problems.json';
@@ -50,6 +51,11 @@ function App(){
           <option>M.C</option>
           <option>Coding</option>
         </select> */}
+        <ul id="headerList">
+          <li><Link to="/">Programming Practice</Link></li>
+          <li><Link to="/debug">Debugging Practice</Link></li>
+          {/* <li><a>Tutorials</a></li> */}
+        </ul>
       </header>
       <div style={{marginTop: "55px"}}>
       <select onChange={handleProblemChange} value={selectedProblem.id} >
@@ -74,7 +80,7 @@ function App(){
       {feedback && <p style={{color:"white"}}>{feedback}</p>}
       </div>
       <footer>
-        <a href="PP.html">Privacy Policy</a>
+        <Link to="/PP">Privacy Policy</Link>
         <p style={{color:"white"}}>© By Snakestongue. All right reserved.</p>
       </footer>
     </div>
