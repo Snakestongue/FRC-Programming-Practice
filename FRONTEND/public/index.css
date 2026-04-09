@@ -10,14 +10,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (max-width: 1024px) {
-  body {
-    font-size: 16px;
-  }
-}
-
 #root {
-  width: 1126px;
+  /* width: 1400px; */
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -39,23 +33,6 @@ h1 {
   margin: 32px 0;
 }
 
-@media (max-width: 1000px) {
-  h1 {
-    font-size: 20px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-}
-@media (max-width: 1024px) {
-  h2 {
-    font-size: 20px;
-  }
-}
 p {
   margin: 0;
 }
@@ -72,11 +49,9 @@ code {
   background-color: #f4f3ec;
 }
 
+
+
 /*MY Styles, not premade*/
-#submit:hover{
-  cursor: pointer;
-  opacity:.5;
-}
 select{
   background:black;
   color:white;
@@ -87,7 +62,7 @@ select{
   margin-bottom:15px;
 }
 header{
-  height: 80px; /* adjust if your header is taller */
+  height: 80px;
   background: rgb(15,15,15);
   margin: 0;
   padding: 10px;
@@ -96,7 +71,7 @@ header{
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0px 2px 20px white;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2), 0 8px 30px rgba(255, 255, 255, 0.1); /*AI box shadow*/
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -105,16 +80,65 @@ header{
   list-style: none;
   display: flex;
   flex-direction: row;
-  
-  
 }
-#headerList li{
-  justify-content: space-around;
-  margin: 0px 30px;
+#feedHolder{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#feedback{
   color:white;
+  border-radius: 10px;
+  border: 1px solid white;
+  margin-top: 25px;
+  padding:20px;
 }
-li:hover{
+#questionProgram{
+  color:white;
+  margin-bottom: 15px;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  align-items: center;
+}
+.headerLinks:hover{
   cursor: pointer;
+  background-color: rgb(45, 45, 45);
+  border-color: rgb(131, 131, 131);
+}
+.headerLinks, .footerLinks{
+  color: white;
+  background-color: rgb(28, 28, 28);
+  border: 1px solid rgb(82, 82,82);
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin: 0px 20px;
+  font-size: 15px;
+  transition: .3s;
+  width:250px;
+  text-decoration: none;
+}
+button{
+  color: white;
+  background-color: rgb(28, 28, 28);
+  border: 1px solid rgb(82, 82,82);
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 15px;
+  transition: .3s;
+  width:250px;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #2a2a2a;
+  border-color: #888;
+}
+#buttonDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 footer{
   background: rgb(15,15,15);
@@ -126,12 +150,14 @@ footer{
   bottom:0;
   left:  0;
   z-index:1000;  
-  box-shadow:0px 2px 20px white;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   display:flex;
   flex-direction:row;
   justify-content:space-around;
 }
-
+#PPLINK:hover, #git:hover{
+  opacity: .5;
+}
 #PP{
   display: flex;
   flex-direction: column;
@@ -147,7 +173,6 @@ footer{
   min-height: 300px;     
   background: rgb(20, 20, 20);
   box-shadow: 0 4px 20px rgba(255,255,255,0.2);
-
 }
 body{
   padding-top: 100px;
@@ -156,35 +181,135 @@ a:visited, a:active, a:link{
   color:white;
   transition: .5s;
 }
-a:hover{
-  opacity: .5;
-}
 .bQ{
-  color:white;
+  color:rgb(190, 190, 190);
   margin: 20px 30px;
-  padding: 0;
-  width:650px;
+  padding: 10px 5px;
   background-color: rgb(15,15,15);
-
+  border: 1px solid white;
+  border-radius: 10px;
+  font-size: 14px;
+}
+pre{
+  color:white !important;
+}
+nav{
+  display: none;
 }
 #f3{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  padding: 20px;
   align-items: center;
+  margin: 0 autos;
+  margin-top: 30px;
 }
 #choice{
   display: flex;
   flex-direction: column;
 }
+#imgHead{
+  width: 850px;
+  height: auto;
+}
 @media (max-width:1000px){
-    #f3{
-      display: flex;
-      flex-direction: column;
-      /* margin: auto; */
-    }
-    header ul li{
-      font-size: 13px;
-    }
-    
+  .bQ{
+    width:75%;
+    font-size:10px !important;
+  }
+  #f3{
+    display: flex;
+    flex-direction: column;
+    /* margin: auto; */
+  }
+  header ul li{
+    font-size: 13px;
+  }
+  #imgHead{
+    width:75%;
+    height:50%;
+  }
+  nav{
+    background-color: rgb(15,15,15);
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    height: 70px;
+    padding: 10px 15px; 
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 2px 10px white;
+    margin-bottom: 0px;
+  }
+  .headerLinks, .footerLinks{
+    width: auto;             
+    min-width: 100px;        
+    font-size: 12px; 
+    padding: 5px;  
+    margin: 0px 5px; 
+    white-space: nowrap;     
+    text-align: center;   
+  }
+  #navTitle{
+    color:white;
+    padding: 0px;
+    margin-right: 0px; 
+  }
+  header{
+    display: none;
+  }
+  #buttonDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+  }
+  #questionProgram{
+    font-size:12px;
+    width:75%;
+    margin: auto;
+    margin-top: 0px;
+  }
+  footer{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 10px 0;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 2px 10px rgba(255,255,255,0.1);
+  }
+  #PPLINK, #git{
+    margin: 10px 10px;
+  }
+  body{
+    overflow-y: auto;
+  }
+  .footerLinks{
+    font-size:10px;
+    width:100px;
+  }
+  #links{
+    display: flex;
+    flex-direction: row;
+  }
+  #copy{
+    font-size:10px;
+  }
+  #editor{
+      height: 30vh;
+    max-height: 400px; 
+    min-height: 200px; 
+  }
+  #PP{
+    font-size: 13px;
+  }
 }

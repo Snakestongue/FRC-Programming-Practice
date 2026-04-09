@@ -2,7 +2,7 @@
     {
         "id":"B1",
         "question":"What is the error in the following code?",
-        "sampleCode":"public class Constants {\n    private static double MAX_DRIVE_SPEED = 0.8;\n}",
+        "sampleCode":"public class Constants {\nprivate static double MAX_DRIVE_SPEED = 0.8;\n}",
         "choice1":"Needs public instead of private.",
         "choice2":"Static must be removed.",
         "choice3":"Double must be a different type.",
@@ -12,7 +12,7 @@
     {
         "id":"B2",
         "question":"What is the error in the following code?",
-        "sampleCode":"public Command startIntake() { \n     run(() -> intakeMotor.set(1));\n}",
+        "sampleCode":"public Command startIntake() { \nrun(() -> intakeMotor.set(1));\n}",
         "choice1":"Lambda is not required",
         "choice2":"Missing return statement.",
         "choice3":"Motor speed cannot be set to 1.",
@@ -22,12 +22,23 @@
     {
         "id":"B3",
         "question":"What is the error in the following code?",
-        "sampleCode":"public Command stopIntake() { \n     return run(() -> intakeMotor.stopMotor();\n}",
+        "sampleCode":"public Command stopIntake() { \nreturn run(() -> intakeMotor.stopMotor();\n}",
         "choice1":"Must use set(0) instead.",
         "choice2":"Must use runOnce.",
         "choice3":"Should not be a Command, must be a method.",
         "CC":"Must use runOnce.",
         "whyCorrect":"For stopping any motor, always use runOnce. We don't want to keep stopping the motor, once is fine."
+    },
+    {
+        "id":"B4",
+        "question":"What is the error in the following code?",
+        "sampleCode":"public void stopIntake(){\nreturn runOnce(() -> intakeMotor.stopMotor());\n}",
+        "choice1":"Must include static",
+        "choice2":"Must use run instead",
+        "choice3":"There is void.",
+        "CC":"There is void.",
+        "whyCorrect":"Using void means the method does NOT return anything. In this code we DO return something. This format is also for a Command instead of void."
     }
+
 
 ]

@@ -1,14 +1,23 @@
+import frcImg from "./FRC.png";
 import {Link} from "react-router-dom"
 function PP(){
     return (
     <div id="PPO">
     <header>
-        <h1>FRC Programming Practice</h1>
+        <img src={frcImg} id="imgHead"/>
         <ul id="headerList">
-            <li><Link to="/">Programming Practice</Link></li>
-            <li><Link to="/debug">Debugging Practice</Link></li>
+            <li><Link to="/" className="headerLinks">Programming Practice</Link></li>
+            <li><Link to="/debug" className="headerLinks">Debugging Practice</Link></li>
+            {/* <li><a>Tutorials</a></li> */}
         </ul>
-    </header>
+        </header>
+    <nav>
+        <h3 id="navTitle">FRCPP</h3>
+        <ul id="headerList">
+          <li><Link to="/" className="headerLinks">Programming Practice</Link></li>
+          <li><Link to="/debug" className="headerLinks">Debugging Practice</Link></li>
+        </ul>
+      </nav>
     <div id="PP">
         <h2>Information we collect!</h2>
         <ul>
@@ -33,8 +42,12 @@ function PP(){
         </ul>
     </div>
         <footer>
-            <p style={{color:"white"}}>© By Snakestongue. All right reserved.</p>
-        </footer>
+        <div id="links">
+          <Link id="PPLINK" to="/PP" className="footerLinks" >Privacy Policy</Link>
+          <a id="git" className="footerLinks" href="https://github.com/Snakestongue/FRC-Programming-Practice">Github</a>
+        </div>
+        <p style={{color:"white"}}>© By Snakestongue. All rights reserved.</p>
+      </footer>
     </div>
     )
 }
