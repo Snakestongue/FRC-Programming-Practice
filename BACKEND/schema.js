@@ -3,7 +3,7 @@ const teamNumSchema = new Schema({
     teamNumber:{
       type: Number,
       required: true,
-      max: 6
+      // max: 6
     }
   },{
     timestamps: true 
