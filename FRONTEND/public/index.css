@@ -214,6 +214,27 @@ nav{
   width: 850px;
   height: auto;
 }
+#sugDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#sugInput{
+  width:50%;
+  min-height: 100px;
+  height:75%;
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+  overflow-y: auto;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+#sugLab{
+  color:white;
+  margin-top: 25px;
+}
 @media (max-width:1000px){
   .bQ{
     width:75%;

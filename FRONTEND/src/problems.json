@@ -16,8 +16,8 @@
   {
     "id": 3,
     "title":"Create a Method",
-    "description":"Create a method called stopIntakeMotor. The method should be declared as static, and it must stop the motor named intakeMotor using the appropriate motor function (do not set the motor speed to 0).",
+    "description":"Create a method called stopIntakeMotor. The method should must stop the motor named intakeMotor using the appropriate motor function (do not set the motor speed to 0).",
     "starterCode": "package frc.robot.subsystems;\nimport com.ctre.phoenix.motorcontrol.can.TalonFX;\nimport edu.wpi.first.wpilibj2.command.SubsystemBase;\npublic class Intake extends SubsystemBase{\n   //Write code here and remove this comment.\n}",
-    "solutionCode": "package frc.robot.subsystems;\nimport com.ctre.phoenix.motorcontrol.can.TalonFX;\nimport edu.wpi.first.wpilibj2.command.SubsystemBase;\npublic class Intake extends SubsystemBase{\n    public static void stopIntakeMotor(){\n        intakeMotor.stopMotor();\n    }\n}"
+    "solutionCode": "package frc.robot.subsystems;\nimport com.ctre.phoenix.motorcontrol.can.TalonFX;\nimport edu.wpi.first.wpilibj2.command.SubsystemBase;\npublic class Intake extends SubsystemBase{\n    public void stopIntakeMotor(){\n        intakeMotor.stopMotor();\n    }\n}"
   }
 ]
