@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 function Sug() {
   const [currentSug, setSug] = useState("")
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async()=>{
+    if (!currentSug.trim()){
+      alert("Please fill out textbox!")
+      return;
+    }
+    setLoading(true)
     try {
       const res = await fetch("https://frc-programming-practice.onrender.com/suggest", {
         method: "POST",
@@ -19,6 +25,7 @@ function Sug() {
       alert("Error!" +error);
       console.log(error)
     }
+    setLoading(false);
   };
 
   return (
@@ -30,7 +37,13 @@ function Sug() {
           <li><Link to="/debug" className="headerLinks">Debugging Practice</Link></li>
         </ul>
       </header>
-
+      <nav>
+              <h3 id="navTitle">FRCPP</h3>
+              <ul id="headerList">
+                <li><Link to="/" className="headerLinks">Programming Practice</Link></li>
+                <li><Link to="/debug" className="headerLinks">Debugging Practice</Link></li>
+              </ul>
+            </nav>
       <div id="sugDiv">
         <label id="sugLab">
           If you have any suggestions, find any errors or have any ideas on how to make
@@ -43,9 +56,16 @@ function Sug() {
           onChange={(e) => setSug(e.target.value)}
         />
 
-        <button id="sugSubmit" onClick={handleSubmit}>
-          Submit
-        </button>
+        <button id="sugSubmit" onClick={handleSubmit} disabled={loading}>
+        {loading ? (
+          <>
+            Submitting
+            <span className="spinner"></span>
+          </>
+        ) : (
+          "Submit"
+        )}
+      </button>
       </div>
 
       <footer>
