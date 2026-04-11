@@ -236,6 +236,11 @@ nav{
   margin-top: 25px;
 }
 @media (max-width:1000px){
+  #root{
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+  }
   .bQ{
     width:75%;
     font-size:10px !important;
@@ -268,7 +273,7 @@ nav{
     box-shadow: 0px 2px 10px white;
     margin-bottom: 0px;
   }
-  .headerLinks, .footerLinks{
+  .headerLinks{
     width: auto;             
     min-width: 100px;        
     font-size: 12px; 
@@ -299,6 +304,7 @@ nav{
     margin-top: 0px;
   }
   footer{
+    margin-top: auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -315,12 +321,21 @@ nav{
     overflow-y: auto;
   }
   .footerLinks{
-    font-size:10px;
-    width:100px;
+    /* width:50%; */
+    min-width: 5px; 
+    max-width: 90px;  
+    font-size: 10px; 
+    padding: 1px;  
+    margin: 0px 5px; 
+    white-space: nowrap;     
+    text-align: center; 
+    align-self: center;  
   }
   #links{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
   }
   #copy{
     font-size:10px;
@@ -332,5 +347,30 @@ nav{
   }
   #PP{
     font-size: 13px;
+  }
+  #sugLab{
+    font-size: 13px;
+    width:75%;
+  }
+  #sugInput{
+    height:100%;
+    min-height: 200px;
+  }
+}
+
+.spinner {
+  width:16px;
+  height: 16px;
+  border: 3px solid white;
+  border-top: 3px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 8px;
+  animation:spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
