@@ -27,23 +27,23 @@ function Sug() {
     }
     setLoading(false);
   };
-
   return (
     <div id="main">
       <header>
         <img src={frcImg} id="imgHead" />
         <ul id="headerList">
-          <li><Link to="/" className="headerLinks">Programming Practice</Link></li>
-          <li><Link to="/debug" className="headerLinks">Debugging Practice</Link></li>
+            <li><Link to="/" className="headerLinks">Programming Practice</Link></li>
+            <li><Link to="/debug" className="headerLinks">Debugging Practice</Link></li>
+            <li><Link to="/tut" className="headerLinks">Tutorials</Link></li>
         </ul>
       </header>
       <nav>
-              <h3 id="navTitle">FRCPP</h3>
-              <ul id="headerList">
-                <li><Link to="/" className="headerLinks">Programming Practice</Link></li>
-                <li><Link to="/debug" className="headerLinks">Debugging Practice</Link></li>
-              </ul>
-            </nav>
+        <ul id="newHeaderList">
+          <li><Link to="/" className="headerLinks">Programming Practice</Link></li>
+          <li><Link to="/debug" className="headerLinks">Debugging Practice</Link></li>
+          <li><Link to="/tut" className="headerLinks">Tutorials</Link></li>
+        </ul>
+      </nav>
       <div id="sugDiv">
         <label id="sugLab">
           If you have any suggestions, find any errors or have any ideas on how to make

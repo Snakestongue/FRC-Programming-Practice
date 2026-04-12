@@ -7,20 +7,21 @@ function Bug(){
   const [selectedChoices, setSelectedChoices] = useState({})
   return(
   <div id="mainDivBug">
-    <header>
-      <img src={frcImg} id="imgHead"/>
-      <ul id="headerList">
+      <header>
+        <img src={frcImg} id="imgHead" />
+        <ul id="headerList">
+            <li><Link to="/" className="headerLinks">Programming Practice</Link></li>
+            <li><Link to="/debug" className="headerLinks">Debugging Practice</Link></li>
+            <li><Link to="/tut" className="headerLinks">Tutorials</Link></li>
+        </ul>
+    </header>
+    
+    <nav>
+      <ul id="newHeaderList">
         <li><Link to="/" className="headerLinks">Programming Practice</Link></li>
         <li><Link to="/debug" className="headerLinks">Debugging Practice</Link></li>
-        {/* <li><a>Tutorials</a></li> */}
+        <li><Link to="/tut" className="headerLinks">Tutorials</Link></li>
       </ul>
-    </header>
-    <nav>
-      <h3 id="navTitle">FRCPP</h3>
-        <ul id="headerList">
-          <li><Link to="/" className="headerLinks">Programming Practice</Link></li>
-          <li><Link to="/debug" className="headerLinks">Debugging Practice</Link></li>
-        </ul>
     </nav>
     <div id="f3">
       {problems.map((p)=>{

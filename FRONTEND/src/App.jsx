@@ -62,24 +62,19 @@ function App(){
   return (
     <div id="mainDiv" >
       <header>
-        <img src={frcImg} id="imgHead"/>
-        {/* <h1 id="FRCPPTitle">FRC Programming Practice</h1> */}
-
-        {/* <select>
-          <option>M.C</option>
-          <option>Coding</option>
-        </select> */}
-        <ul id="headerList">
-          <li><Link to="/" className="headerLinks">Programming Practice</Link></li>
-          <li><Link to="/debug" className="headerLinks">Debugging Practice</Link></li>
-          {/* <li><a>Tutorials</a></li> */}
-        </ul>
+            <img src={frcImg} id="imgHead" />
+            <ul id="headerList">
+                <li><Link to="/" className="headerLinks">Programming Practice</Link></li>
+                <li><Link to="/debug" className="headerLinks">Debugging Practice</Link></li>
+                <li><Link to="/tut" className="headerLinks">Tutorials</Link></li>
+            </ul>
       </header>
+      
       <nav>
-        <h3 id="navTitle">FRCPP</h3>
-        <ul id="headerList">
+        <ul id="newHeaderList">
           <li><Link to="/" className="headerLinks">Programming Practice</Link></li>
           <li><Link to="/debug" className="headerLinks">Debugging Practice</Link></li>
+          <li><Link to="/tut" className="headerLinks">Tutorials</Link></li>
         </ul>
       </nav>
       <div style={{marginTop: "55px"}}>
