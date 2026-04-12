@@ -76,7 +76,7 @@ header{
   flex-direction: row;
   justify-content: space-around;
 }
-#headerList{
+#headerList, #newHeaderList{
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -235,6 +235,28 @@ nav{
   color:white;
   margin-top: 25px;
 }
+#ATC{
+  display:grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;/* 1fr 1fr;*/
+  text-align: left !important;
+}
+.tutCard{
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 20px;
+  color:rgb(131, 131, 131);
+}
+.codeIndent{
+  list-style: none;
+}
+code{
+  background-color: black;
+  color:rgb(131, 131, 131);
+  border: 1px solid rgb(45,45,45);
+  border-radius: 10px;
+}
 @media (max-width:1000px){
   #root{
     min-height: 100svh;
@@ -242,8 +264,9 @@ nav{
     flex-direction: column;
   }
   .bQ{
-    width:75%;
+    width:85%;
     font-size:10px !important;
+    margin: 5px 0px;
   }
   #f3{
     display: flex;
@@ -253,10 +276,18 @@ nav{
   header ul li{
     font-size: 13px;
   }
+  header{
+    display: flex;
+    align-items: center;
+    padding: 0 !important;
+    box-shadow: none;
+    /* border-bottom: 1px solid red; */
+  }
   #imgHead{
     width:75%;
-    height:50%;
+    height:auto;
   }
+
   nav{
     background-color: rgb(15,15,15);
     display: flex;
@@ -267,11 +298,12 @@ nav{
     padding: 10px 15px; 
     width: 100%;
     position: fixed;
-    top: 0;
+    top: 80px;
     left: 0;
     z-index: 1000;
-    box-shadow: 0px 2px 10px white;
-    margin-bottom: 0px;
+    margin-bottom: 80px;
+    padding: 0px !important;
+    border-top: 1px solid white;
   }
   .headerLinks{
     width: auto;             
@@ -286,9 +318,6 @@ nav{
     color:white;
     padding: 0px;
     margin-right: 0px; 
-  }
-  header{
-    display: none;
   }
   #buttonDiv{
     display: flex;
@@ -319,6 +348,7 @@ nav{
   }
   body{
     overflow-y: auto;
+    padding-top: 150px !important;
   }
   .footerLinks{
     /* width:50%; */
@@ -355,6 +385,18 @@ nav{
   #sugInput{
     height:100%;
     min-height: 200px;
+  }
+  #headerList{
+    display: none;
+  }
+  #newHeaderList{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    margin: 0 5px;
+    width: auto;
   }
 }
 
