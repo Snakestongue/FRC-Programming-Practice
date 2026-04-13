@@ -102,7 +102,7 @@ header{
   justify-self: center;
   align-items: center;
 }
-.headerLinks:hover{
+.headerLinks:hover, .footerLinks:hover{
   cursor: pointer;
   background-color: rgb(45, 45, 45);
   border-color: rgb(131, 131, 131);
@@ -154,9 +154,6 @@ footer{
   display:flex;
   flex-direction:row;
   justify-content:space-around;
-}
-#PPLINK:hover, #git:hover{
-  opacity: .5;
 }
 #PP{
   display: flex;
