@@ -147,7 +147,7 @@ footer{
   padding:10px;
   width: 100%;     
   position:fixed;
-  bottom:0;
+  bottom:0 !important;
   left:  0;
   z-index:1000;  
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -176,6 +176,7 @@ footer{
 }
 body{
   padding-top: 100px;
+  padding-bottom: 50px;
 }
 a:visited, a:active, a:link{
   color:white;
@@ -238,7 +239,7 @@ nav{
 #ATC{
   display:grid;
   grid-template-rows: auto;
-  grid-template-columns: 1fr;/* 1fr 1fr;*/
+  grid-template-columns: 1fr 1fr;
   text-align: left !important;
 }
 .tutCard{
@@ -332,6 +333,9 @@ code{
     margin: auto;
     margin-top: 0px;
   }
+  #sugSubmit{
+    margin: 30px 0px;
+  }
   footer{
     margin-top: auto;
     flex-direction: column;
@@ -349,6 +353,7 @@ code{
   body{
     overflow-y: auto;
     padding-top: 150px !important;
+    padding-bottom: 0 !important;
   }
   .footerLinks{
     /* width:50%; */
@@ -371,7 +376,7 @@ code{
     font-size:10px;
   }
   #editor{
-      height: 30vh;
+    height: 30vh;
     max-height: 400px; 
     min-height: 200px; 
   }
@@ -383,8 +388,8 @@ code{
     width:75%;
   }
   #sugInput{
-    height:100%;
-    min-height: 200px;
+    height:45vh;
+    width:85%;
   }
   #headerList{
     display: none;
@@ -397,6 +402,10 @@ code{
     margin: 0;
     margin: 0 5px;
     width: auto;
+  }
+  #ATC{
+    display: flex;
+    flex-direction: column;
   }
 }
 

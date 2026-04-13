@@ -74,7 +74,7 @@ function Tut(){
                             <li className="codeIndent">
                                 <pre>
                                     <code>
-{`if (x &gt y) {
+{`if (x > y) {
     return 1;
 }`}
                                     </code>
@@ -86,7 +86,7 @@ function Tut(){
                             <li className="codeIndent">
                                 <pre>
                                     <code>
-{`if (x &gt y) {
+{`if (x > y) {
     return 1;
 } else {
     return 2;
@@ -100,7 +100,7 @@ function Tut(){
                             <li className="codeIndent">
                                 <pre>
                                     <code>
-{`if (x &gt y) {
+{`if (x > y) {
     return 1;
 } else if (x == y) {
     return 2;
@@ -113,11 +113,125 @@ function Tut(){
                         </ul>
                     </ul>
                 </div>
-                {/* <div id="javaAdvance" className="tutCard">
+                <div id="javaAdvance" className="tutCard">
                     <h3><strong>Advanced Java</strong></h3>
-                    <ul></ul>
+                    <h4>Classes</h4>
+                    <ul>
+                        <li>A class is a blueprint for creating objects.</li>
+                        <li>A class's name must match the file name.</li>
+                        <li>Classes have their own variables.</li>
+                        <li>Acess Modifiers</li>
+                        <ul>
+                            <li>Public: Accessible from anywhere.</li>
+                            <li>Private: Accessible from only that class.</li>
+                        </ul>
+                    </ul>
+                    <h4>Objects</h4>
+                    <ul>
+                        <li>An object is an instance of a class</li>
+                        <li>Formula</li>
+                        <ul>
+                            <li className="codeIndent">
+                                <pre>
+                                    <code>
+{`Class objectName = new Class()`}
+                                    </code>
+                                </pre>
+                            </li>
+                        </ul>
+                    </ul>
+                    <h4>Dot Operator</h4>
+                    <ul>
+                        <li>Used to access data inside an object.</li>
+                        <li>Formula (using object above) </li>
+                        <ul>
+                            <li className="codeIndent">
+                                <pre>
+                                    <code>
+{`objectName.width = 100;`}
+                                    </code>
+                                </pre>
+                            </li>
+                        </ul>
+                    </ul>
+                    <h4>Attributes</h4>
+                    <ul>
+                        <li>Any variables declared within a class, but outside a method or constructor.</li>
+                        <li>Also called fields or instance variables.</li>
+                        <li>Can be accessed by an object & dot operator</li>
+                    </ul>
+                    <h4>Methods</h4>
+                    <ul>
+                        <li>Methods are blocks of code performing a specific task.</li>
+                        <li>Parts of a method</li>
+                        <ul>
+                            <li><strong>Access Modifier:</strong> Public or Private</li>
+                            <li><strong>Return Type:</strong> String, Int, Void, etc</li>
+                            <ul>
+                                <li><i>Void means nothing is returned.</i></li>
+                            </ul>
+                            <li><strong>Method Name:</strong> Name of Method</li>
+                            <li><strong>Parameters:</strong> Input values a method can take in (optional)</li>
+                            <li>Formula</li>
+                            <ul>
+                                <li className="codeIndent">
+                                    <pre>
+                                        <code>
+{`public int add (int a, int b) {
+    return a + b;
+} `}
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                        </ul>
+                        <li>Static Methods</li>
+                        <ul>
+                            <li>Static methods can be called without an object.</li>
+                            <li>Formula</li>
+                            <ul>
+                                <li className="codeIndent">
+                                    <pre>
+                                        <code>
+{`public static void myStaticMethod() {
+    System.out.println("This is a static method!");
+} `}
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                            <li><i>Most FRC methods are <b>NOT</b> static.</i></li>
+                        </ul>
+                    </ul>
+                    <h4>Constructor</h4>
+                    <ul>
+                        <li>A special method with the same name as the class</li>
+                        <li>It is used to initialize objects.</li>
+                        <li>They don't have any return type</li>
+                        <li>Formula</li>
+                        <ul>
+                            <li className="codeIndent">
+                                <pre>
+                                    <code>
+{`
+public class Intake {
+    private TalonFX intakeMotor;
+    
+    public Intake (){
+        intakeMotor = new TalonFX(3);
+    }
+}`}
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>
+                                This code creates a class and an object using a constructor.
+                            </li>
+                        </ul>
+                    </ul>
+                    
                 </div>
-                <div id="canSpark" className="tutCard">
+                {/* <div id="canSpark" className="tutCard">
                     <h3><strong>Using SparkMax</strong></h3>
                     <ul></ul>
                 </div>
