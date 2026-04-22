@@ -1,4 +1,4 @@
-import frcImg from "./FRC.png";
+import frcImg from ".././IMG/FRC.png"
 import { Link } from "react-router-dom";
 import { useState } from "react";
 function Sug() {

@@ -1,9 +1,9 @@
 import {BrowserRouter,Routes, Route} from "react-router-dom"
 import App from "./App.jsx"
-import Bug from "./Bug.jsx"
-import PP from "./PP.jsx"
-import Sug from "./Sug.jsx"
-import Tut from "./Tut.jsx"
+import Bug from "./SideFiles/Bug.jsx"
+import PP from "./SideFiles/PP.jsx"
+import Sug from "./SideFiles/Sug.jsx"
+import Tut from "./SideFiles/Tut.jsx"
 function RoutesPage(){
   return(
     <BrowserRouter basename="/FRC-Programming-Practice">

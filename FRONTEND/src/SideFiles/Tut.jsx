@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom"
-import frcImg from "./FRC.png"
+import frcImg from ".././IMG/FRC.png"
 function Tut(){
     return (
         <div id="TutMain">

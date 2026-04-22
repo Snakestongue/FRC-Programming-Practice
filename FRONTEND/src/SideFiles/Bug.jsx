@@ -1,6 +1,6 @@
-import frcImg from "./FRC.png";
+import frcImg from ".././IMG/FRC.png"
 import {useState} from 'react'
-import problems from './debugProblems.json'
+import problems from '../JSON/debugProblems.json'
 import {Link } from "react-router-dom"
 
 function Bug(){

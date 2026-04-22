@@ -1,8 +1,8 @@
-import frcImg from "./FRC.png";
+import frcImg from "./IMG/FRC.png";
 import {Link } from "react-router-dom"
 import {useState }from 'react';
 import Editor from '@monaco-editor/react';
-import problems from './problems.json';
+import problems from './JSON/problems.json';
 function App(){
   const[selectedProblem, setSelectedProblem]=useState(problems[0]);
   const[userCode, setUserCode]= useState(selectedProblem.starterCode);
