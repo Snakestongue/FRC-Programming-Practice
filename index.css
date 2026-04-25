@@ -1,26 +1,30 @@
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font: 18px/145% system-ui, 'Segoe UI', Roboto, sans-serif;
   letter-spacing: 0.18px;
-  color: #6b6375;
-  background: black;
+  color: #a0a0a0;
+  background: #0f0f0f;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#root {
-  /* width: 1400px; */
+/* #root {
+   width: 1400px; 
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  /* border-inline: 1px solid white; */
+   border-inline: 1px solid white; 
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-}
+} */
 
 h1, h2 {
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -52,6 +56,29 @@ code {
 
 
 /*MY Styles, not premade*/
+#mainDiv {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+#mainApp{
+  margin-top: 30px;
+  flex: 1;
+}
+#divEditor{
+  max-width: 1200px;
+  margin: 20px auto;
+  height: 65vh;
+  border-radius: 10px;
+  overflow: hidden; 
+  border: 1px solid #673498;
+  background: rgb(15,15,15);
+  transition: .5s;
+  padding: 0px;
+}
+#divEditor:hover{
+  border-color: #a855f7;
+}
 select{
   background:black;
   color:white;
@@ -63,7 +90,7 @@ select{
 }
 header{
   height: 80px;
-  background: rgb(15,15,15);
+  background: #161616;
   margin: 0;
   padding: 10px;
   width: 100%;
@@ -71,7 +98,7 @@ header{
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2), 0 8px 30px rgba(255, 255, 255, 0.1); /*AI box shadow*/
+  /* box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2), 0 8px 30px rgba(255, 255, 255, 0.1); AI BOX SHADOW*/
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -85,6 +112,7 @@ header{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 20px;
 }
 #feedback{
   color:white;
@@ -93,47 +121,39 @@ header{
   margin-top: 25px;
   padding:20px;
 }
-#questionProgram{
-  color:white;
-  margin-bottom: 15px;
-  max-width: 800px;
-  display: flex;
-  flex-direction: row;
-  justify-self: center;
-  align-items: center;
-}
-.headerLinks:hover, .footerLinks:hover{
-  cursor: pointer;
-  background-color: rgb(45, 45, 45);
-  border-color: rgb(131, 131, 131);
-}
-.headerLinks, .footerLinks{
+#questionProgram, #sugLab{
   color: white;
-  background-color: rgb(28, 28, 28);
-  border: 1px solid rgb(82, 82,82);
+  margin: 20px auto;
+  text-align: center;
+  max-width: 1100px;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgb(15, 15, 15);
+  border: 1px solid #673498;
+}
+.headerLinks:hover, .footerLinks:hover, button:hover{
+  cursor: pointer;
+  background-color: rgba(168,85,247,0.25);
+}
+.headerLinks, .footerLinks, button{
+  color: white;
+  background-color: #161616;
+  border: 1px solid #a855f7;
   border-radius: 8px;
-  padding: 10px 20px;
-  margin: 0px 20px;
   font-size: 15px;
   transition: .3s;
-  width:250px;
+  min-width:100px;
+  width:auto;
   text-decoration: none;
+  text-align: center;
 }
-button{
-  color: white;
-  background-color: rgb(28, 28, 28);
-  border: 1px solid rgb(82, 82,82);
-  border-radius: 8px;
-  padding: 10px 20px;
-  margin: 10px;
-  font-size: 15px;
-  transition: .3s;
-  width:250px;
+#copy{
+  margin-left: 20px;
 }
-button:hover {
-  cursor: pointer;
-  background-color: #2a2a2a;
-  border-color: #888;
+button, .footerLinks, .headerLinks{
+  min-width: 200px;
+  padding: 15px;
+  margin: 25px;
 }
 #buttonDiv{
   display: flex;
@@ -141,19 +161,21 @@ button:hover {
   justify-content: center;
 }
 footer{
-  background: rgb(15,15,15);
+  background: #161616;
   margin:0;
-  margin-top: 30px;
-  padding:10px;
+  padding:30px 0px;
   width: 100%;     
-  position:fixed;
-  bottom:0 !important;
-  left:  0;
+  margin-top: 0px;
   z-index:1000;  
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid #a855f7;
   display:flex;
   flex-direction:row;
   justify-content:space-around;
+  align-items:center;
+}
+
+.footerLinks{
+  margin: 0px 20px;
 }
 #PP{
   display: flex;
@@ -163,17 +185,16 @@ footer{
   color: white;
   margin: 30px auto;
   padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid #673498;
   border-radius: 10px;
   width: 65%;
   max-width: 600px;
   min-height: 300px;     
   background: rgb(20, 20, 20);
-  box-shadow: 0 4px 20px rgba(255,255,255,0.2);
 }
 body{
   padding-top: 100px;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
 }
 a:visited, a:active, a:link{
   color:white;
@@ -182,9 +203,9 @@ a:visited, a:active, a:link{
 .bQ{
   color:rgb(190, 190, 190);
   margin: 20px 30px;
-  padding: 10px 5px;
+  padding: 10px;
   background-color: rgb(15,15,15);
-  border: 1px solid white;
+  border: 1px solid #a855f7;
   border-radius: 10px;
   font-size: 14px;
 }
@@ -220,14 +241,20 @@ nav{
 }
 #sugInput{
   width:50%;
-  min-height: 100px;
-  height:75%;
-  margin-top: 10px;
+  height:65vh;
+  margin-top: 20px;
   background-color: black;
   color: white;
   overflow-y: auto;
-  border: 1px solid white;
+  border: 1px solid #673498;
+  padding: 10px;
   border-radius: 10px;
+  font-size: 18px;
+}
+#sugSubmit{
+  min-width: 350px;
+  width: auto;
+  margin: 30px 0px;
 }
 #sugLab{
   color:white;
@@ -241,7 +268,7 @@ nav{
 }
 .tutCard{
   padding: 20px;
-  border: 1px solid white;
+  border: 1px solid #a855f7;
   border-radius: 10px;
   margin: 20px;
   color:rgb(131, 131, 131);
@@ -255,7 +282,13 @@ code{
   border: 1px solid rgb(45,45,45);
   border-radius: 10px;
 }
-@media (max-width:1000px){
+@media (max-width:1500px){
+  #divEditor{
+    max-width: 85%;
+    margin: auto !important;
+    height: 65vh;
+    overflow: hidden; 
+  }
   #root{
     min-height: 100svh;
     display: flex;
@@ -263,7 +296,7 @@ code{
   }
   .bQ{
     width:85%;
-    font-size:10px !important;
+    font-size:14px !important;
     margin: 5px 0px;
   }
   #f3{
@@ -279,7 +312,7 @@ code{
     align-items: center;
     padding: 0 !important;
     box-shadow: none;
-    /* border-bottom: 1px solid red; */
+    /* border-bottom: 1px solid green; */
   }
   #imgHead{
     width:75%;
@@ -287,30 +320,18 @@ code{
   }
 
   nav{
-    background-color: rgb(15,15,15);
+    background-color: #161616;
     display: flex;
     flex-direction: row;
     justify-content: center; 
     align-items: center;
-    height: 70px;
-    padding: 10px 15px; 
     width: 100%;
     position: fixed;
     top: 80px;
     left: 0;
     z-index: 1000;
-    margin-bottom: 80px;
-    padding: 0px !important;
-    border-top: 1px solid white;
-  }
-  .headerLinks{
-    width: auto;             
-    min-width: 100px;        
-    font-size: 12px; 
-    padding: 5px;  
-    margin: 0px 5px; 
-    white-space: nowrap;     
-    text-align: center;   
+    padding:5px 0px;
+    border-bottom: 1px solid #a855f7;
   }
   #navTitle{
     color:white;
@@ -318,65 +339,56 @@ code{
     margin-right: 0px; 
   }
   #buttonDiv{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
     justify-content: center;
     align-items: center;
-    margin: 5px;
-  }
-  #questionProgram{
-    font-size:12px;
-    width:75%;
     margin: auto;
-    margin-top: 0px;
+  }
+  #questionProgram, #sugLab{
+    font-size:12px;
+    width:80%;
+    margin: auto;
+    margin:20px auto;
+    
+  }
+  .footerLinks, .headerLinks{
+    flex: 1;
+    text-align: center;
+    margin: 0px 10px;
+    padding:8px 15px
+  }
+  nav, #newHeaderList, footer{
+    padding: 10px 0px;
+    margin: 0px;
   }
   #sugSubmit{
     margin: 30px 0px;
   }
   footer{
-    margin-top: auto;
+    display: flex ;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: auto;
-    padding: 10px 0;
-    position: relative;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 2px 10px rgba(255,255,255,0.1);
+    padding-top: 20px;
   }
   #PPLINK, #git{
     margin: 10px 10px;
+  }
+  #PP{
+    height:75vh;
   }
   body{
     overflow-y: auto;
     padding-top: 150px !important;
     padding-bottom: 0 !important;
   }
-  .footerLinks{
-    /* width:50%; */
-    min-width: 5px; 
-    max-width: 90px;  
-    font-size: 10px; 
-    padding: 1px;  
-    margin: 0px 5px; 
-    white-space: nowrap;     
-    text-align: center; 
-    align-self: center;  
-  }
-  #links{
-    display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-
-  }
   #copy{
     font-size:10px;
+    margin-top: 30px;
   }
-  #editor{
-    height: 30vh;
-    max-height: 400px; 
-    min-height: 200px; 
-  }
+
   #PP{
     font-size: 13px;
   }
@@ -385,37 +397,78 @@ code{
     width:75%;
   }
   #sugInput{
-    height:45vh;
-    width:85%;
+    height:55vh;
+    width:77%;
   }
   #headerList{
     display: none;
-  }
-  #newHeaderList{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    margin: 0;
-    margin: 0 5px;
-    width: auto;
   }
   #ATC{
     display: flex;
     flex-direction: column;
   }
+  
 }
 
 .spinner {
   width:16px;
   height: 16px;
-  border: 3px solid white;
-  border-top: 3px solid black;
+  border: 3px solid black;
+  border-top: 3px solid #673498;
   border-radius: 50%;
   display: inline-block;
   margin-left: 8px;
   animation:spin 0.8s linear infinite;
 }
+@media (max-width:600px){
+  #divEditor{
+    max-width: 300px !important;
+    margin-bottom: 20px !important  ;
+  }
+  #buttonDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto !important;
+  }
+  button, .footerLinks{
+    margin: 5px;  
+    width: 5%;
+    max-width: 260px;
+    min-width: none;
+  }
+  .headerLinks {
+    margin: 0px 4px;
+    min-width: unset;
+    width: auto;
+    padding:10px;
+    font-size: 12px;
+  }
+  nav, #newHeaderList{
+    padding: 7px 0px;
+    margin: 0px;
+  }
+  footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    padding-top: 30px;
+    margin-top: 20px;
+  }
+  #copy{
+    text-align: center;
+    font-size: 10px;
+  }
+  .bQ{
+    font-size:10px !important;
+  }
+  
+}
+
 
 @keyframes spin {
   to {
