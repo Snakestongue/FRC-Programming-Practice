@@ -50,10 +50,11 @@ function Sug() {
           this website better please add them below. I will read all of them!
         </label>
 
-        <textarea
+        <textarea 
           id="sugInput"
           value={currentSug}
           onChange={(e) => setSug(e.target.value)}
+          placeholder="Start typing here..."
         />
 
         <button id="sugSubmit" onClick={handleSubmit} disabled={loading}>
@@ -69,7 +70,7 @@ function Sug() {
       </div>
 
       <footer>
-        <div id="links">
+        <div id="newFooterDiv">
           <Link id="PPLINK" to="/PP" className="footerLinks" >Privacy Policy</Link>
           <Link id="Sug" to="/Sug" className="footerLinks" >Add a suggestion</Link>
           <a id="git" className="footerLinks" href="https://github.com/Snakestongue/FRC-Programming-Practice">Github</a>

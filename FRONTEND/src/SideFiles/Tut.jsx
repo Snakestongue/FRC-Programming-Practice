@@ -70,8 +70,6 @@ function Tut(){
                     <h4>If Statements</h4>
                     <ul>
                         <li><strong>If</strong></li>
-                        <ul>
-                            <li className="codeIndent">
                                 <pre>
                                     <code>
 {`if (x > y) {
@@ -79,11 +77,7 @@ function Tut(){
 }`}
                                     </code>
                                 </pre>
-                            </li>
-                        </ul> 
                         <li><strong>If-Else</strong></li>
-                                                <ul>
-                            <li className="codeIndent">
                                 <pre>
                                     <code>
 {`if (x > y) {
@@ -93,11 +87,7 @@ function Tut(){
 }`}
                                     </code>
                                 </pre>
-                            </li>
-                        </ul>
                         <li><strong>If-Else If-Else</strong></li>
-                        <ul>
-                            <li className="codeIndent">
                                 <pre>
                                     <code>
 {`if (x > y) {
@@ -109,8 +99,6 @@ function Tut(){
 }`}
                                     </code>
                                 </pre>
-                            </li>
-                        </ul>
                     </ul>
                 </div>
                 <div id="javaAdvance" className="tutCard">
@@ -130,29 +118,21 @@ function Tut(){
                     <ul>
                         <li>An object is an instance of a class</li>
                         <li>Formula</li>
-                        <ul>
-                            <li className="codeIndent">
                                 <pre>
                                     <code>
 {`Class objectName = new Class()`}
                                     </code>
                                 </pre>
-                            </li>
-                        </ul>
                     </ul>
                     <h4>Dot Operator</h4>
                     <ul>
                         <li>Used to access data inside an object.</li>
                         <li>Formula (using object above) </li>
-                        <ul>
-                            <li className="codeIndent">
                                 <pre>
                                     <code>
 {`objectName.width = 100;`}
                                     </code>
                                 </pre>
-                            </li>
-                        </ul>
                     </ul>
                     <h4>Attributes</h4>
                     <ul>
@@ -173,8 +153,6 @@ function Tut(){
                             <li><strong>Method Name:</strong> Name of Method</li>
                             <li><strong>Parameters:</strong> Input values a method can take in (optional)</li>
                             <li>Formula</li>
-                            <ul>
-                                <li className="codeIndent">
                                     <pre>
                                         <code>
 {`public int add (int a, int b) {
@@ -182,15 +160,11 @@ function Tut(){
 } `}
                                         </code>
                                     </pre>
-                                </li>
-                            </ul>
                         </ul>
                         <li>Static Methods</li>
                         <ul>
                             <li>Static methods can be called without an object.</li>
                             <li>Formula</li>
-                            <ul>
-                                <li className="codeIndent">
                                     <pre>
                                         <code>
 {`public static void myStaticMethod() {
@@ -198,8 +172,6 @@ function Tut(){
 } `}
                                         </code>
                                     </pre>
-                                </li>
-                            </ul>
                             <li><i>Most FRC methods are <b>NOT</b> static.</i></li>
                         </ul>
                     </ul>
@@ -209,8 +181,6 @@ function Tut(){
                         <li>It is used to initialize objects.</li>
                         <li>They don't have any return type</li>
                         <li>Formula</li>
-                        <ul>
-                            <li className="codeIndent">
                                 <pre>
                                     <code>
 {`
@@ -223,11 +193,9 @@ public class Intake {
 }`}
                                     </code>
                                 </pre>
-                            </li>
                             <li>
                                 This code creates a class and an object using a constructor.
                             </li>
-                        </ul>
                     </ul>
                     
                 </div>
@@ -241,10 +209,10 @@ public class Intake {
                 </div> */}
             </div>
             <footer>
-                <div id="links">
-                <Link id="PPLINK" to="/PP" className="footerLinks" >Privacy Policy</Link>
-                <Link id="Sug" to="/Sug" className="footerLinks" >Add a suggestion</Link>
-                <a id="git" className="footerLinks" href="https://github.com/Snakestongue/FRC-Programming-Practice">Github</a>
+                <div id="newFooterDiv">
+                    <Link id="PPLINK" to="/PP" className="footerLinks" >Privacy Policy</Link>
+                    <Link id="Sug" to="/Sug" className="footerLinks" >Add a suggestion</Link>
+                    <a id="git" className="footerLinks" href="https://github.com/Snakestongue/FRC-Programming-Practice">Github</a>
                 </div>
                 <p style={{color:"white"}} id="copy">© By Snakestongue. All rights reserved.</p>
             </footer>

@@ -69,7 +69,6 @@ function App(){
                 <li><Link to="/tut" className="headerLinks">Tutorials</Link></li>
             </ul>
       </header>
-      
       <nav>
         <ul id="newHeaderList">
           <li><Link to="/" className="headerLinks">Programming Practice</Link></li>
@@ -77,39 +76,55 @@ function App(){
           <li><Link to="/tut" className="headerLinks">Tutorials</Link></li>
         </ul>
       </nav>
-      <div style={{marginTop: "55px"}}>
-      <p id="questionProgram"> {selectedProblem.description} </p>
-      <div style ={{
-        height:'50vh',
-        maxWidth:"900px",
-        margin:"0 auto"
-        }}>
-        <Editor
-          height="100%"
-          defaultLanguage="java"
-          theme="vs-dark"
-          value={userCode}
-          onChange={(value)=>setUserCode(value)} 
-          id="editor"
-        />
-      </div>
-      <div id="buttonDiv">
-        <div> 
-          {problems.slice(0, 3).map((p)=>(
-          <button
-            key={p.id}onClick={()=>handleProblemChange({target:{value:  p.id}})}>
-            {p.title}
-          </button> 
-          ))}
+      <div id="mainApp">
+        <p id="questionProgram"> {selectedProblem.description} </p>
+        <div id="divEditor">
+          <Editor
+            height="100%"
+            defaultLanguage="java"
+            theme="purpleTheme"
+            value={userCode}
+            onChange={(value)=>setUserCode(value)} 
+            id="editor"
+            onMount={(editor, monaco) => {
+              monaco.editor.defineTheme("purpleTheme", {
+                base: "vs-dark",
+                inherit: true,
+                rules: [
+                  { token: "keyword", foreground: "a855f7" },
+                  { token: "number", foreground: "f59e0b" },
+                  { token: "string", foreground: "facc15" },
+                  { token: "comment", foreground: "6b7280" }
+                ],
+                colors: {
+                  "editor.background": "#0f0f0f",
+                  "editor.foreground": "#ffffff",
+                  "editorCursor.foreground": "#a855f7",
+                  "editor.lineHighlightBackground": "#161616",
+                  "editor.selectionBackground": "#a855f733",
+                  "editorLineNumber.foreground": "#4b5563"
+                }
+              });
+
+              monaco.editor.setTheme("purpleTheme");
+            }}
+            />
         </div>
-        <button id="submit" onClick={handleSubmit}>Submit</button>
-      </div>
-      <div id="feedHolder">
-        {feedback && <p id="feedback">{feedback}</p>}
-      </div>
+        <div id="buttonDiv">
+            {problems.slice(0, 3).map((p)=>(
+            <button
+              key={p.id}onClick={()=>handleProblemChange({target:{value:  p.id}})}>
+              {p.title}
+            </button> 
+            ))}
+          <button id="submit" onClick={handleSubmit}>Submit</button>
+        </div>
+        <div id="feedHolder">
+          {feedback && <p id="feedback">{feedback}</p>}
+        </div>
       </div>
       <footer>
-        <div id="links">
+        <div id="newFooterDiv">
           <Link id="PPLINK" to="/PP" className="footerLinks" >Privacy Policy</Link>
           <Link id="Sug" to="/Sug" className="footerLinks" >Add a suggestion</Link>
           <a id="git" className="footerLinks" href="https://github.com/Snakestongue/FRC-Programming-Practice">Github</a>
