@@ -347,7 +347,7 @@ code{
     margin: auto;
   }
   #questionProgram, #sugLab{
-    font-size:12px;
+    /* font-size:12px; */
     width:80%;
     margin: auto;
     margin:20px auto;
@@ -449,6 +449,9 @@ code{
   nav, #newHeaderList{
     padding: 7px 0px;
     margin: 0px;
+  }
+  #questionProgram{
+    font-size: 10px;
   }
   footer{
     display: flex;
