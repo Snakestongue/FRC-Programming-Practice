@@ -1,5 +1,5 @@
-# THIS IS NOT THE OFFICIAL GITHUB REPOISOTRY OF THE FORMALLY KNOWN FRC PROGRAMMING PRACTICE
+# This is not the Github Repository to Perscript (Formerly known as FRC Programming Practice)
 
- **Simply a redirect. I apolgize about the inconvience.**
+ ## This repository is simply to redirect people to the new link
  
  Please go to the new repository - https://github.com/Snakestongue/Perscript
