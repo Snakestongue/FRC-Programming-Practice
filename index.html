@@ -3,10 +3,21 @@
 <head>
   <meta charset="utf-8">
   <title>Redirecting to Perscript</title>
-  <meta http-equiv="refresh" content="0; url=https://snakestongue.github.io/Perscript/">
-  <link rel="canonical" href="https://snakestongue.github.io/Perscript/">
+  <script>
+    const oldBase = "/FRC-Programming-Practice";
+    const newBase = "/Perscript";
+    let path = window.location.pathname;
+    if (path.startsWith(oldBase)) {
+      path = path.substring(oldBase.length);
+    }
+    const newUrl =newBase +path + window.location.search +window.location.hash;
+    window.location.replace(newUrl);
+  </script>
 </head>
 <body>
-  <p>This project has moved. Redirecting to <a href="https://snakestongue.github.io/Perscript/">Perscript</a>...</p>
+  <p>
+    This project has moved.
+    <a href="/Perscript/">Continue to Perscript</a>
+  </p>
 </body>
 </html>
